@@ -1,0 +1,242 @@
+[
+  {
+    "screenId": "aa5bf670533c4c4893a1dde49c6387d4",
+    "title": "Main Menu",
+    "componentName": "MainMenu",
+    "file": "src/screens/MainMenu.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "start-game-1",
+        "kind": "button",
+        "label": "START GAME",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "SETTINGS",
+        "index": 1
+      },
+      {
+        "id": "controls-3",
+        "kind": "button",
+        "label": "CONTROLS",
+        "index": 2
+      },
+      {
+        "id": "high-scores-4",
+        "kind": "button",
+        "label": "HIGH SCORES",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "screenId": "dcfa4aaefaef40f2af7ce1c9a7695cec",
+    "title": "Game Over",
+    "componentName": "GameOver",
+    "file": "src/screens/GameOver.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "main-menu-1",
+        "kind": "button",
+        "label": "MAIN MENU",
+        "index": 0
+      },
+      {
+        "id": "play-again-2",
+        "kind": "button",
+        "label": "PLAY AGAIN",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "screenId": "21d60bbf3be2442f91b029968f3bb774",
+    "title": "Game Options",
+    "componentName": "GameOptions",
+    "file": "src/screens/GameOptions.tsx",
+    "buttons": 7,
+    "inputs": 4,
+    "links": 9,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "easy-4",
+        "kind": "button",
+        "label": "EASY",
+        "index": 3
+      },
+      {
+        "id": "normal-5",
+        "kind": "button",
+        "label": "NORMAL",
+        "index": 4
+      },
+      {
+        "id": "hard-6",
+        "kind": "button",
+        "label": "HARD",
+        "index": 5
+      },
+      {
+        "id": "clear-high-scores-7",
+        "kind": "button",
+        "label": "CLEAR HIGH SCORES",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "67f6a2606f894a838e7c8203b3b1d192",
+    "title": "Controls Help",
+    "componentName": "ControlsHelp",
+    "file": "src/screens/ControlsHelp.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "acknowledge-2",
+        "kind": "button",
+        "label": "Acknowledge",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "screenId": "edad7174f1504fac8653027420adeea0",
+    "title": "Pause Overlay",
+    "componentName": "PauseOverlay",
+    "file": "src/screens/PauseOverlay.tsx",
+    "buttons": 7,
+    "inputs": 0,
+    "links": 8,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "resume-4",
+        "kind": "button",
+        "label": "RESUME",
+        "index": 3
+      },
+      {
+        "id": "restart-5",
+        "kind": "button",
+        "label": "RESTART",
+        "index": 4
+      },
+      {
+        "id": "settings-6",
+        "kind": "button",
+        "label": "SETTINGS",
+        "index": 5
+      },
+      {
+        "id": "quit-to-menu-7",
+        "kind": "button",
+        "label": "QUIT TO MENU",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "8adb26203ae74a478c76db3e61d7ecd0",
+    "title": "Game Board",
+    "componentName": "GameBoard",
+    "file": "src/screens/GameBoard.tsx",
+    "buttons": 7,
+    "inputs": 0,
+    "links": 4,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "l-r-4",
+        "kind": "button",
+        "label": "L/R",
+        "index": 3
+      },
+      {
+        "id": "rot-5",
+        "kind": "button",
+        "label": "ROT",
+        "index": 4
+      },
+      {
+        "id": "drop-6",
+        "kind": "button",
+        "label": "DROP",
+        "index": 5
+      },
+      {
+        "id": "hold-7",
+        "kind": "button",
+        "label": "HOLD",
+        "index": 6
+      }
+    ]
+  }
+]
