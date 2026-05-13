@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TETRIS_SUPERVISOR - Game Over</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#cbc6bd",
+                        "outline-variant": "#444749",
+                        "surface-container-high": "#2a2a2a",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed": "#1d1b16",
+                        "on-tertiary-fixed-variant": "#494640",
+                        "on-primary-fixed-variant": "#444749",
+                        "on-secondary-container": "#abb9d2",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353535",
+                        "on-primary": "#2d3133",
+                        "on-tertiary-container": "#67645d",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "surface-container-highest": "#353535",
+                        "surface-tint": "#c4c7c9",
+                        "tertiary": "#ffffff",
+                        "background": "#131313",
+                        "primary": "#ffffff",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#c4c7c9",
+                        "on-surface-variant": "#c4c7c9",
+                        "secondary-container": "#3c4a5e",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "inverse-primary": "#5c5f61",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-bright": "#3a3939",
+                        "outline": "#8e9193",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e7e2d9",
+                        "secondary-fixed": "#d5e3fd",
+                        "on-tertiary": "#32302a",
+                        "on-primary-container": "#626567",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#e7e2d9",
+                        "primary-fixed": "#e0e3e5",
+                        "on-secondary": "#233144",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "secondary": "#b9c7e0",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#191c1e",
+                        "primary-container": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "container-max": "1280px",
+                        "touch-target": "44px"
+                    },
+                    "fontFamily": {
+                        "data-mono": [
+                            "JetBrains Mono"
+                        ],
+                        "body-md": [
+                            "Inter"
+                        ],
+                        "label-caps": [
+                            "JetBrains Mono"
+                        ],
+                        "body-lg": [
+                            "Inter"
+                        ],
+                        "display-lg": [
+                            "JetBrains Mono"
+                        ],
+                        "headline-md": [
+                            "JetBrains Mono"
+                        ]
+                    },
+                    "fontSize": {
+                        "data-mono": [
+                            "14px",
+                            {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-caps": [
+                            "12px",
+                            {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-md": [
+                            "24px",
+                            {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col h-screen overflow-hidden selection:bg-error selection:text-on-error min-h-screen">
+<!-- Background Grid Effect to simulate the void -->
+<div class="fixed inset-0 pointer-events-none z-0" style="background-image: linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px); background-size: 40px 40px; opacity: 0.1;"></div>
+<!-- The TopAppBar Shell (Suppressed based on logic - this is a transactional/modal state, but we'll include a muted version for context if needed. Actually, per logic, a Game Over screen is a dead end/transactional overlay. We suppress standard nav.) -->
+<!-- Main Game Over Canvas -->
+<main class="flex-grow flex items-center justify-center relative z-10 px-margin-mobile md:px-margin-desktop py-8">
+<!-- The Game Over Overlay Container -->
+<div class="w-full max-w-2xl bg-surface-container border border-error relative overflow-hidden flex flex-col shadow-[0_0_32px_rgba(147,0,10,0.3)]">
+<!-- Structural Chamfered Tab -->
+<div class="absolute top-0 left-0 bg-error px-4 py-1 rounded-br-DEFAULT z-20">
+<span class="font-label-caps text-label-caps text-on-error">SYSTEM_FAILURE</span>
+</div>
+<!-- Header Section -->
+<div class="pt-16 pb-8 px-8 text-center border-b border-outline-variant bg-error-container/20">
+<div class="flex justify-center items-center mb-4">
+<span class="material-symbols-outlined text-error" style="font-size: 48px; font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-error tracking-tighter uppercase">Game Over</h1>
+<p class="font-data-mono text-data-mono text-on-surface-variant mt-2">STRUCTURAL INTEGRITY COMPROMISED. BLOCK OUT DETECTED.</p>
+</div>
+<!-- Statistics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-outline-variant p-[1px]">
+<!-- Stat: Score -->
+<div class="bg-surface-container-high p-6 flex flex-col items-center justify-center group hover:bg-surface transition-colors">
+<div class="w-full text-center border-b border-outline-variant pb-2 mb-4 relative">
+<span class="font-label-caps text-label-caps text-outline absolute left-0 top-0 hidden md:block">01</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">FINAL SCORE</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary">124,500</div>
+</div>
+<!-- Stat: Lines -->
+<div class="bg-surface-container-high p-6 flex flex-col items-center justify-center group hover:bg-surface transition-colors">
+<div class="w-full text-center border-b border-outline-variant pb-2 mb-4 relative">
+<span class="font-label-caps text-label-caps text-outline absolute left-0 top-0 hidden md:block">02</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">LINES CLEARED</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary">87</div>
+</div>
+<!-- Stat: Level -->
+<div class="bg-surface-container-high p-6 flex flex-col items-center justify-center group hover:bg-surface transition-colors relative">
+<!-- High Score Badge (Contextual) -->
+<div class="absolute top-2 right-2 text-error">
+<span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div class="w-full text-center border-b border-outline-variant pb-2 mb-4 relative">
+<span class="font-label-caps text-label-caps text-outline absolute left-0 top-0 hidden md:block">03</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">LEVEL REACHED</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary">09</div>
+</div>
+</div>
+<!-- High Score Achievement Banner -->
+<div class="bg-surface px-8 py-4 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-data-mono text-data-mono text-on-surface">NEW PERSONAL BEST RECORDED</span>
+</div>
+<span class="material-symbols-outlined text-outline">verified</span>
+</div>
+<!-- Action Buttons -->
+<div class="p-8 flex flex-col sm:flex-row gap-4 justify-end bg-surface-container-low">
+<button class="h-touch-target px-8 bg-transparent border border-outline-variant text-primary font-label-caps text-label-caps hover:bg-surface hover:text-primary transition-colors focus:outline-none focus:border-primary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">menu</span>
+                    MAIN MENU
+                </button>
+<button class="h-touch-target px-8 bg-primary text-on-primary font-label-caps text-label-caps border border-primary hover:bg-tertiary-fixed-dim transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface flex items-center justify-center gap-2 shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">replay</span>
+                    PLAY AGAIN
+                </button>
+</div>
+<!-- Bottom decorative scanline -->
+<div class="h-1 w-full bg-error opacity-50"></div>
+</div>
+</main>
+</body></html>

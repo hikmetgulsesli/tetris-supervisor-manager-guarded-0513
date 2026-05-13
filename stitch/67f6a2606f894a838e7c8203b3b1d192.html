@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tetris Supervisor - Controls Help</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#cbc6bd",
+                      "outline-variant": "#444749",
+                      "surface-container-high": "#2a2a2a",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed": "#1d1b16",
+                      "on-tertiary-fixed-variant": "#494640",
+                      "on-primary-fixed-variant": "#444749",
+                      "on-secondary-container": "#abb9d2",
+                      "inverse-on-surface": "#313030",
+                      "surface": "#131313",
+                      "error-container": "#93000a",
+                      "surface-variant": "#353535",
+                      "on-primary": "#2d3133",
+                      "on-tertiary-container": "#67645d",
+                      "surface-container-low": "#1c1b1b",
+                      "on-error": "#690005",
+                      "surface-container": "#201f1f",
+                      "surface-container-highest": "#353535",
+                      "surface-tint": "#c4c7c9",
+                      "tertiary": "#ffffff",
+                      "background": "#131313",
+                      "primary": "#ffffff",
+                      "surface-dim": "#131313",
+                      "primary-fixed-dim": "#c4c7c9",
+                      "on-surface-variant": "#c4c7c9",
+                      "secondary-container": "#3c4a5e",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "inverse-primary": "#5c5f61",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "surface-bright": "#3a3939",
+                      "outline": "#8e9193",
+                      "inverse-surface": "#e5e2e1",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e7e2d9",
+                      "secondary-fixed": "#d5e3fd",
+                      "on-tertiary": "#32302a",
+                      "on-primary-container": "#626567",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#e7e2d9",
+                      "primary-fixed": "#e0e3e5",
+                      "on-secondary": "#233144",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "secondary": "#b9c7e0",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-fixed": "#191c1e",
+                      "primary-container": "#e0e3e5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "container-max": "1280px",
+                      "touch-target": "44px"
+              },
+              "fontFamily": {
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Modal Overlay Container -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+<!-- Modal Content -->
+<main class="bg-surface border border-outline-variant w-full max-w-4xl max-h-[921px] overflow-y-auto flex flex-col relative">
+<!-- Modal Header -->
+<header class="flex justify-between items-center p-6 border-b border-outline-variant sticky top-0 bg-surface z-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tighter uppercase">Controls Database</h1>
+</div>
+<button aria-label="Close" class="w-touch-target h-touch-target flex items-center justify-center text-outline hover:text-primary transition-colors border border-transparent hover:border-outline-variant bg-surface-container hover:bg-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content Grid -->
+<div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Keyboard Controls Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 bg-secondary rounded-sm"></div>
+<h2 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Hardware Interface (Keyboard)</h2>
+</div>
+<!-- Keyboard Layout Representation -->
+<div class="bg-surface-container-low border border-outline-variant p-6 flex flex-col gap-8 relative overflow-hidden">
+<!-- Subtle grid background effect -->
+<div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(to right, #444749 1px, transparent 1px), linear-gradient(to bottom, #444749 1px, transparent 1px); background-size: 24px 24px;"></div>
+<!-- Action Keys -->
+<div class="grid grid-cols-2 gap-4 relative z-10">
+<!-- Hold -->
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 border border-outline-variant bg-surface-container flex items-center justify-center font-data-mono text-data-mono text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                    C
+                                </div>
+<div class="flex flex-col">
+<span class="font-data-mono text-data-mono text-primary">HOLD PIECE</span>
+<span class="font-body-md text-sm text-outline">Swap active/reserve</span>
+</div>
+</div>
+<!-- Pause -->
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 border border-outline-variant bg-surface-container flex items-center justify-center font-data-mono text-data-mono text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                    P
+                                </div>
+<div class="flex flex-col">
+<span class="font-data-mono text-data-mono text-primary">PAUSE SYSTEM</span>
+<span class="font-body-md text-sm text-outline">Halt execution</span>
+</div>
+</div>
+</div>
+<!-- Movement Keys -->
+<div class="flex flex-col items-center gap-4 relative z-10 mt-4">
+<!-- Up Arrow -->
+<div class="flex items-center gap-4 group w-full justify-center">
+<div class="flex flex-col items-end text-right mr-4 w-32 hidden md:flex">
+<span class="font-data-mono text-data-mono text-primary">ROTATE RIGHT</span>
+<span class="font-body-md text-sm text-outline">90° clockwise</span>
+</div>
+<div class="w-12 h-12 border border-outline-variant bg-surface-container flex items-center justify-center text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined">arrow_upward</span>
+</div>
+<div class="flex flex-col text-left ml-4 w-32 md:hidden">
+<span class="font-data-mono text-data-mono text-primary">ROTATE RIGHT</span>
+</div>
+</div>
+<!-- Middle Row Arrows -->
+<div class="flex gap-4 items-center justify-center w-full">
+<!-- Left Arrow -->
+<div class="flex flex-col items-center group">
+<div class="w-12 h-12 border border-outline-variant bg-surface-container flex items-center justify-center text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors mb-2 shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<span class="font-data-mono text-[10px] text-primary">MOVE LEFT</span>
+</div>
+<!-- Down Arrow -->
+<div class="flex flex-col items-center group">
+<div class="w-12 h-12 border border-outline-variant bg-surface-container flex items-center justify-center text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors mb-2 shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined">arrow_downward</span>
+</div>
+<span class="font-data-mono text-[10px] text-primary">SOFT DROP</span>
+</div>
+<!-- Right Arrow -->
+<div class="flex flex-col items-center group">
+<div class="w-12 h-12 border border-outline-variant bg-surface-container flex items-center justify-center text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors mb-2 shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<span class="font-data-mono text-[10px] text-primary">MOVE RIGHT</span>
+</div>
+</div>
+</div>
+<!-- Spacebar -->
+<div class="flex flex-col items-center gap-2 relative z-10 w-full mt-4 group">
+<div class="w-full max-w-[240px] h-12 border border-outline-variant bg-surface-container flex items-center justify-center font-data-mono text-data-mono text-primary group-hover:border-primary group-hover:bg-surface-variant transition-colors shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                SPACE
+                            </div>
+<span class="font-data-mono text-data-mono text-error uppercase mt-2">Hard Drop</span>
+<span class="font-body-md text-sm text-outline text-center">Instant placement &amp; lock</span>
+</div>
+</div>
+</section>
+<!-- Touch Controls Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 bg-secondary rounded-sm"></div>
+<h2 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Tactile Interface (Touch)</h2>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Swipe Horizontal -->
+<div class="group border border-outline-variant bg-surface-container-low p-4 flex items-center gap-6 hover:bg-surface-container-high hover:border-primary transition-all">
+<div class="w-16 h-16 flex items-center justify-center border border-outline border-dashed text-primary bg-surface group-hover:shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined text-3xl">swipe_left_alt</span>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-data-mono text-data-mono text-primary mb-1">SWIPE LEFT/RIGHT</span>
+<span class="font-body-md text-sm text-outline">Translates piece horizontally across the grid.</span>
+</div>
+</div>
+<!-- Tap -->
+<div class="group border border-outline-variant bg-surface-container-low p-4 flex items-center gap-6 hover:bg-surface-container-high hover:border-primary transition-all">
+<div class="w-16 h-16 flex items-center justify-center border border-outline border-dashed text-primary bg-surface group-hover:shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined text-3xl">touch_app</span>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-data-mono text-data-mono text-primary mb-1">SINGLE TAP</span>
+<span class="font-body-md text-sm text-outline">Rotates the current piece 90° clockwise.</span>
+</div>
+</div>
+<!-- Swipe Down -->
+<div class="group border border-outline-variant bg-surface-container-low p-4 flex items-center gap-6 hover:bg-surface-container-high hover:border-primary transition-all">
+<div class="w-16 h-16 flex items-center justify-center border border-outline border-dashed text-primary bg-surface group-hover:shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined text-3xl">swipe_down_alt</span>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-data-mono text-data-mono text-primary mb-1">SWIPE DOWN</span>
+<span class="font-body-md text-sm text-outline">Accelerates downward descent (Soft Drop).</span>
+</div>
+</div>
+<!-- Swipe Up -->
+<div class="group border border-outline-variant bg-surface-container-low p-4 flex items-center gap-6 hover:bg-surface-container-high hover:border-error transition-all relative overflow-hidden">
+<div class="absolute inset-y-0 left-0 w-1 bg-error"></div>
+<div class="w-16 h-16 flex items-center justify-center border border-outline border-dashed text-error bg-surface group-hover:shadow-[0_0_8px_rgba(255,180,171,0.2)]">
+<span class="material-symbols-outlined text-3xl">swipe_up_alt</span>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-data-mono text-data-mono text-error mb-1">SWIPE UP</span>
+<span class="font-body-md text-sm text-outline">Instantly locks piece at lowest available position (Hard Drop).</span>
+</div>
+</div>
+<!-- Long Press -->
+<div class="group border border-outline-variant bg-surface-container-low p-4 flex items-center gap-6 hover:bg-surface-container-high hover:border-primary transition-all">
+<div class="w-16 h-16 flex items-center justify-center border border-outline border-dashed text-primary bg-surface group-hover:shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined text-3xl">radio_button_checked</span>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-data-mono text-data-mono text-primary mb-1">LONG PRESS</span>
+<span class="font-body-md text-sm text-outline">Swaps active piece with hold reserve.</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Action -->
+<footer class="p-6 border-t border-outline-variant bg-surface flex justify-end">
+<button class="bg-primary text-on-primary font-data-mono text-data-mono px-8 py-3 border border-transparent hover:bg-surface hover:text-primary hover:border-primary transition-colors uppercase tracking-widest">
+                    Acknowledge
+                </button>
+</footer>
+</main>
+</div>
+</body></html>

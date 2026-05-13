@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tetris Command Center - Operational</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#cbc6bd",
+                      "outline-variant": "#444749",
+                      "surface-container-high": "#2a2a2a",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed": "#1d1b16",
+                      "on-tertiary-fixed-variant": "#494640",
+                      "on-primary-fixed-variant": "#444749",
+                      "on-secondary-container": "#abb9d2",
+                      "inverse-on-surface": "#313030",
+                      "surface": "#131313",
+                      "error-container": "#93000a",
+                      "surface-variant": "#353535",
+                      "on-primary": "#2d3133",
+                      "on-tertiary-container": "#67645d",
+                      "surface-container-low": "#1c1b1b",
+                      "on-error": "#690005",
+                      "surface-container": "#201f1f",
+                      "surface-container-highest": "#353535",
+                      "surface-tint": "#c4c7c9",
+                      "tertiary": "#ffffff",
+                      "background": "#131313",
+                      "primary": "#ffffff",
+                      "surface-dim": "#131313",
+                      "primary-fixed-dim": "#c4c7c9",
+                      "on-surface-variant": "#c4c7c9",
+                      "secondary-container": "#3c4a5e",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "inverse-primary": "#5c5f61",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "surface-bright": "#3a3939",
+                      "outline": "#8e9193",
+                      "inverse-surface": "#e5e2e1",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e7e2d9",
+                      "secondary-fixed": "#d5e3fd",
+                      "on-tertiary": "#32302a",
+                      "on-primary-container": "#626567",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#e7e2d9",
+                      "primary-fixed": "#e0e3e5",
+                      "on-secondary": "#233144",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "secondary": "#b9c7e0",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-fixed": "#191c1e",
+                      "primary-container": "#e0e3e5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "container-max": "1280px",
+                      "touch-target": "44px"
+              },
+              "fontFamily": {
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Tetromino Accent Colors for Borders and Shadows */
+        .border-tetromino-i { border-color: #06b6d4; }
+        .shadow-tetromino-i { box-shadow: 0 0 8px #06b6d4; }
+        .bg-tetromino-i { background-color: #06b6d4; }
+        
+        .border-tetromino-j { border-color: #3b82f6; }
+        .bg-tetromino-j { background-color: #3b82f6; }
+        
+        .border-tetromino-l { border-color: #f97316; }
+        .bg-tetromino-l { background-color: #f97316; }
+        
+        .border-tetromino-o { border-color: #eab308; }
+        .bg-tetromino-o { background-color: #eab308; }
+        
+        .border-tetromino-s { border-color: #22c55e; }
+        .bg-tetromino-s { background-color: #22c55e; }
+        
+        .border-tetromino-t { border-color: #a855f7; }
+        .bg-tetromino-t { background-color: #a855f7; }
+        
+        .border-tetromino-z { border-color: #ef4444; }
+        .bg-tetromino-z { background-color: #ef4444; }
+
+        /* Grid Background Pattern */
+        .bg-grid-pattern {
+            background-image: 
+                linear-gradient(to right, #334155 1px, transparent 1px),
+                linear-gradient(to bottom, #334155 1px, transparent 1px);
+            background-size: 24px 24px; /* Cell size */
+            background-position: center bottom;
+        }
+        
+        /* Ghost Piece Style */
+        .ghost-piece {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: #0F172A; /* Override for deep navy requested in prompt */
+        }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col font-body-md overflow-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary border-b border-outline-variant transition-colors duration-150 docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-touch-target">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-primary tracking-tighter">TETRIS_SUPERVISOR</span>
+<div class="hidden md:flex items-center gap-2 border border-outline-variant px-2 py-1 bg-surface-container-low ml-4">
+<div class="w-2 h-2 bg-green-500"></div>
+<span class="font-label-caps text-label-caps text-on-surface">OPERATIONAL</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center h-full gap-gutter">
+<!-- Suppressed nav items as this is the main operational screen (Destination) but we want to show the header actions -->
+</nav>
+<div class="flex items-center gap-2">
+<button class="w-touch-target h-touch-target flex items-center justify-center text-outline hover:text-primary hover:bg-surface-variant transition-colors duration-150 active:scale-95 border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="w-touch-target h-touch-target flex items-center justify-center text-outline hover:text-primary hover:bg-surface-variant transition-colors duration-150 active:scale-95 border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined">pause</span>
+</button>
+<button class="w-touch-target h-touch-target flex items-center justify-center text-outline hover:text-primary hover:bg-surface-variant transition-colors duration-150 active:scale-95 border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="bg-surface-container-low dark:bg-surface-container-low text-primary dark:text-primary font-data-mono text-data-mono border-r border-outline-variant docked left-0 h-full w-64 hidden md:flex flex-col fixed top-0 pt-[calc(var(--spacing-touch-target)+var(--spacing-margin-desktop))] z-40">
+<div class="px-4 pb-6 mb-4 border-b border-outline-variant">
+<div class="w-12 h-12 bg-surface-variant border border-outline-variant mb-3 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary mb-1">SUPERVISOR_01</div>
+<div class="font-label-caps text-label-caps text-on-surface flex items-center gap-2">
+<div class="w-2 h-2 bg-green-500"></div>
+                STATUS: OPERATIONAL
+            </div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="bg-surface-container-highest text-primary border-l-4 border-primary px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span>Dashboard</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-3 hover:bg-surface-container hover:text-primary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-3 hover:bg-surface-container hover:text-primary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">sports_esports</span>
+<span>Controls</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-3 hover:bg-surface-container hover:text-primary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span>System</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 relative md:ml-64 pt-touch-target flex flex-col md:flex-row items-center justify-center p-margin-mobile md:p-margin-desktop gap-gutter h-[calc(100vh-var(--spacing-touch-target))] md:h-[1024px]">
+<!-- Background decorative elements for the "void" -->
+<div class="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-variant via-[#0F172A] to-[#0F172A]"></div>
+<!-- Left Panel: Hold Box -->
+<div class="hidden md:flex flex-col w-32 shrink-0 z-10 gap-4 mt-12 self-start">
+<div class="bg-surface-container-low border border-outline-variant relative p-2">
+<div class="absolute -top-3 -left-[1px] bg-surface border border-outline-variant px-2 py-0.5 z-10 border-b-surface">
+<span class="font-label-caps text-label-caps text-outline">HOLD</span>
+</div>
+<div class="w-full aspect-square bg-surface flex items-center justify-center border border-outline-variant p-2 mt-2">
+<!-- 'T' Tetromino in Hold -->
+<div class="grid grid-cols-3 grid-rows-2 gap-[1px] w-full h-auto p-2">
+<div class="col-start-2 bg-tetromino-t w-full aspect-square border border-surface"></div>
+<div class="row-start-2 col-span-3 grid grid-cols-3 gap-[1px]">
+<div class="bg-tetromino-t w-full aspect-square border border-surface"></div>
+<div class="bg-tetromino-t w-full aspect-square border border-surface"></div>
+<div class="bg-tetromino-t w-full aspect-square border border-surface"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Playfield -->
+<div class="relative z-10 flex flex-col items-center">
+<!-- Active Neon Border wrapping the game board -->
+<div class="p-[2px] bg-surface border border-tetromino-i shadow-tetromino-i relative">
+<!-- 10x20 Grid -->
+<div class="w-[240px] h-[480px] bg-grid-pattern bg-[#0F172A] relative overflow-hidden border border-[#334155]">
+<!-- Placed Blocks (Example scenario) -->
+<!-- Bottom Row -->
+<div class="absolute bottom-0 left-0 w-[24px] h-[24px] bg-tetromino-j border border-surface"></div>
+<div class="absolute bottom-0 left-[24px] w-[24px] h-[24px] bg-tetromino-j border border-surface"></div>
+<div class="absolute bottom-[24px] left-[24px] w-[24px] h-[24px] bg-tetromino-j border border-surface"></div>
+<div class="absolute bottom-[48px] left-[24px] w-[24px] h-[24px] bg-tetromino-j border border-surface"></div>
+<!-- Ghost Piece (I-Piece) -->
+<div class="absolute bottom-[24px] left-[72px] w-[96px] h-[24px] grid grid-cols-4 gap-0">
+<div class="ghost-piece w-[24px] h-[24px]"></div>
+<div class="ghost-piece w-[24px] h-[24px]"></div>
+<div class="ghost-piece w-[24px] h-[24px]"></div>
+<div class="ghost-piece w-[24px] h-[24px]"></div>
+</div>
+<!-- Active Piece (I-Piece falling) -->
+<div class="absolute top-[96px] left-[72px] w-[96px] h-[24px] grid grid-cols-4 gap-0 shadow-tetromino-i z-20">
+<div class="bg-tetromino-i w-[24px] h-[24px] border border-surface"></div>
+<div class="bg-tetromino-i w-[24px] h-[24px] border border-surface"></div>
+<div class="bg-tetromino-i w-[24px] h-[24px] border border-surface"></div>
+<div class="bg-tetromino-i w-[24px] h-[24px] border border-surface"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Queue & Stats -->
+<div class="hidden md:flex flex-col w-48 shrink-0 z-10 gap-6 mt-12 self-start">
+<!-- NEXT Queue -->
+<div class="bg-surface-container-low border border-outline-variant relative p-2 pb-4">
+<div class="absolute -top-3 -left-[1px] bg-surface border border-outline-variant px-2 py-0.5 z-10 border-b-surface">
+<span class="font-label-caps text-label-caps text-outline">NEXT</span>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<!-- Queue 1: O-Piece -->
+<div class="w-full h-16 bg-surface border border-outline-variant flex items-center justify-center">
+<div class="grid grid-cols-2 gap-[1px] w-10 h-10">
+<div class="bg-tetromino-o border border-surface"></div>
+<div class="bg-tetromino-o border border-surface"></div>
+<div class="bg-tetromino-o border border-surface"></div>
+<div class="bg-tetromino-o border border-surface"></div>
+</div>
+</div>
+<!-- Queue 2: Z-Piece -->
+<div class="w-full h-16 bg-surface border border-outline-variant flex items-center justify-center opacity-70">
+<div class="grid grid-cols-3 grid-rows-2 gap-[1px] w-12 h-8">
+<div class="col-span-2 grid grid-cols-2 gap-[1px]"><div class="bg-tetromino-z border border-surface"></div><div class="bg-tetromino-z border border-surface"></div></div>
+<div class="col-start-2 col-span-2 grid grid-cols-2 gap-[1px] row-start-2"><div class="bg-tetromino-z border border-surface"></div><div class="bg-tetromino-z border border-surface"></div></div>
+</div>
+</div>
+<!-- Queue 3: L-Piece -->
+<div class="w-full h-16 bg-surface border border-outline-variant flex items-center justify-center opacity-40">
+<div class="grid grid-cols-3 grid-rows-2 gap-[1px] w-12 h-8 p-1">
+<div class="col-start-3 bg-tetromino-l w-full aspect-square border border-surface"></div>
+<div class="row-start-2 col-span-3 grid grid-cols-3 gap-[1px]">
+<div class="bg-tetromino-l w-full aspect-square border border-surface"></div>
+<div class="bg-tetromino-l w-full aspect-square border border-surface"></div>
+<div class="bg-tetromino-l w-full aspect-square border border-surface"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Boxes -->
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-low border border-outline-variant relative p-3">
+<div class="font-label-caps text-label-caps text-outline mb-1">SCORE</div>
+<div class="font-data-mono text-headline-md text-primary tracking-widest text-right">014,520</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant relative p-3">
+<div class="font-label-caps text-label-caps text-outline mb-1">LEVEL</div>
+<div class="font-data-mono text-headline-md text-primary tracking-widest text-right">08</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant relative p-3">
+<div class="font-label-caps text-label-caps text-outline mb-1">LINES</div>
+<div class="font-data-mono text-headline-md text-primary tracking-widest text-right">084</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Controls) -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary font-label-caps text-label-caps border-t border-outline-variant fixed bottom-0 w-full z-50 flex justify-around items-center px-4 h-24 md:hidden">
+<button class="flex flex-col items-center justify-center text-outline pt-2 w-16 h-16 active:bg-primary active:text-on-primary transition-all border border-outline-variant bg-surface">
+<span class="material-symbols-outlined text-2xl mb-1">keyboard_arrow_left</span>
+<span class="text-[10px]">L/R</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline pt-2 w-16 h-16 active:bg-primary active:text-on-primary transition-all border border-outline-variant bg-surface shadow-tetromino-i border-tetromino-i">
+<span class="material-symbols-outlined text-2xl mb-1">rotate_right</span>
+<span class="text-[10px]">ROT</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline pt-2 w-16 h-16 active:bg-primary active:text-on-primary transition-all border border-outline-variant bg-surface">
+<span class="material-symbols-outlined text-2xl mb-1">keyboard_double_arrow_down</span>
+<span class="text-[10px]">DROP</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline pt-2 w-16 h-16 active:bg-primary active:text-on-primary transition-all border border-outline-variant bg-surface">
+<span class="material-symbols-outlined text-2xl mb-1">inventory_2</span>
+<span class="text-[10px]">HOLD</span>
+</button>
+</nav>
+</body></html>
