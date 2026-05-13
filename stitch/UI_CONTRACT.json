@@ -1,0 +1,686 @@
+[
+  {
+    "screenId": "aa5bf670533c4c4893a1dde49c6387d4",
+    "screenTitle": "Main Menu",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "CONTROLS",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "HIGH SCORES",
+        "line": 194
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "CONTROLS",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "HIGH SCORES",
+        "line": 194
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 4,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "dcfa4aaefaef40f2af7ce1c9a7695cec",
+    "screenTitle": "Game Over",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "MAIN",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "PLAY AGAIN",
+        "line": 221
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "MAIN",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "PLAY AGAIN",
+        "line": 221
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "21d60bbf3be2442f91b029968f3bb774",
+    "screenTitle": "Game Options",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "Analytics",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Controls",
+        "href": "#",
+        "line": 128
+      },
+      {
+        "type": "link",
+        "label": "System",
+        "href": "#",
+        "line": 134
+      },
+      {
+        "type": "link",
+        "label": "arrow_back",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "link",
+        "label": "Navigate",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "link",
+        "label": "Rotate",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "Drop",
+        "href": "#",
+        "line": 256
+      },
+      {
+        "type": "link",
+        "label": "Hold",
+        "href": "#",
+        "line": 260
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 155
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 158
+      },
+      {
+        "type": "button",
+        "label": "EASY",
+        "line": 201
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "CLEAR HIGH SCORES",
+        "line": 238
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 181
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 188
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 212
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 222
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "Analytics",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Controls",
+        "href": "#",
+        "line": 128
+      },
+      {
+        "type": "link",
+        "label": "System",
+        "href": "#",
+        "line": 134
+      },
+      {
+        "type": "link",
+        "label": "arrow_back",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "link",
+        "label": "Navigate",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "link",
+        "label": "Rotate",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "Drop",
+        "href": "#",
+        "line": 256
+      },
+      {
+        "type": "link",
+        "label": "Hold",
+        "href": "#",
+        "line": 260
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 155
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 158
+      },
+      {
+        "type": "button",
+        "label": "EASY",
+        "line": 201
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "CLEAR HIGH SCORES",
+        "line": 238
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 181
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 188
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 212
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 222
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 20,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "67f6a2606f894a838e7c8203b3b1d192",
+    "screenTitle": "Controls Help",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Close",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "Acknowledge",
+        "line": 317
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Close",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "Acknowledge",
+        "line": 317
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "edad7174f1504fac8653027420adeea0",
+    "screenTitle": "Pause Overlay",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "line": 195
+      },
+      {
+        "type": "link",
+        "label": "Analytics",
+        "href": "#",
+        "line": 199
+      },
+      {
+        "type": "link",
+        "label": "Controls",
+        "href": "#",
+        "line": 203
+      },
+      {
+        "type": "link",
+        "label": "System",
+        "href": "#",
+        "line": 207
+      },
+      {
+        "type": "link",
+        "label": "Navigate",
+        "href": "#",
+        "line": 275
+      },
+      {
+        "type": "link",
+        "label": "Rotate",
+        "href": "#",
+        "line": 279
+      },
+      {
+        "type": "link",
+        "label": "Drop",
+        "href": "#",
+        "line": 283
+      },
+      {
+        "type": "link",
+        "label": "Hold",
+        "href": "#",
+        "line": 287
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 252
+      },
+      {
+        "type": "button",
+        "label": "RESTART",
+        "line": 256
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 260
+      },
+      {
+        "type": "button",
+        "label": "QUIT TO MENU",
+        "line": 264
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "line": 195
+      },
+      {
+        "type": "link",
+        "label": "Analytics",
+        "href": "#",
+        "line": 199
+      },
+      {
+        "type": "link",
+        "label": "Controls",
+        "href": "#",
+        "line": 203
+      },
+      {
+        "type": "link",
+        "label": "System",
+        "href": "#",
+        "line": 207
+      },
+      {
+        "type": "link",
+        "label": "Navigate",
+        "href": "#",
+        "line": 275
+      },
+      {
+        "type": "link",
+        "label": "Rotate",
+        "href": "#",
+        "line": 279
+      },
+      {
+        "type": "link",
+        "label": "Drop",
+        "href": "#",
+        "line": 283
+      },
+      {
+        "type": "link",
+        "label": "Hold",
+        "href": "#",
+        "line": 287
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 252
+      },
+      {
+        "type": "button",
+        "label": "RESTART",
+        "line": 256
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 260
+      },
+      {
+        "type": "button",
+        "label": "QUIT TO MENU",
+        "line": 264
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 15,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "8adb26203ae74a478c76db3e61d7ecd0",
+    "screenTitle": "Game Board",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "line": 236
+      },
+      {
+        "type": "link",
+        "label": "Analytics",
+        "href": "#",
+        "line": 240
+      },
+      {
+        "type": "link",
+        "label": "Controls",
+        "href": "#",
+        "line": 244
+      },
+      {
+        "type": "link",
+        "label": "System",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 212
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 215
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "L/R",
+        "line": 362
+      },
+      {
+        "type": "button",
+        "label": "ROT",
+        "line": 366
+      },
+      {
+        "type": "button",
+        "label": "DROP",
+        "line": 370
+      },
+      {
+        "type": "button",
+        "label": "HOLD",
+        "line": 374
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "line": 236
+      },
+      {
+        "type": "link",
+        "label": "Analytics",
+        "href": "#",
+        "line": 240
+      },
+      {
+        "type": "link",
+        "label": "Controls",
+        "href": "#",
+        "line": 244
+      },
+      {
+        "type": "link",
+        "label": "System",
+        "href": "#",
+        "line": 248
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 212
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 215
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "L/R",
+        "line": 362
+      },
+      {
+        "type": "button",
+        "label": "ROT",
+        "line": 366
+      },
+      {
+        "type": "button",
+        "label": "DROP",
+        "line": 370
+      },
+      {
+        "type": "button",
+        "label": "HOLD",
+        "line": 374
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 11,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
